@@ -3,6 +3,7 @@
 Object-mapper takes a ResultSet from a JDBC query and maps it to java objects.
 
 ```java
+ObjectMapper om = new ObjectMapper(conn);
 ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM EMPLOYEES WHERE ID = 123");
 Employee employee = om.readOne(rs, Employee.class);
 ```
