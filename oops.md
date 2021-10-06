@@ -66,8 +66,16 @@ POST /employee/123/sendEmail
 
 ## Scope of Entities
 
-Entities and their fields can be annotated to restrict their visibility to the owner / any authenticated user / the whole internet.
+Entities and their fields can be annotated to restrict their visibility to the owner / any authenticated user / the whole internet. Same goes for modifyability. In this way you can define entities that can be modified only by their owner but are visible to all of the users.
+
+In additioon to annotations, functions and operations can programmatically obtain the current user and present corresponding outcomes.
 
 ## Customization
 
-The rendering of entities can be customized.
+The rendering of entities can be customized in several ways.
+
+Different view types interpret the entities in their own way. A Tiles view will represent a grid of entities, where each entity will be a tile. A Tabular view will create a table with a row for each instance and a column for each field. You can define your own views, but that is an advanced topic.
+
+Another way to customize the rendering of entities is through the annotation of fields. Fields can be annotated to be displayed using a different font/color/positioning.
+
+Sometimes you want to display the same type of entity in two different ways. For this you can use decorators. Decorators are essentially subclasses of an entity that can hide some fields, override their annotations or define additional functions or operations.
