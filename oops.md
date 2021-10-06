@@ -21,7 +21,8 @@ app.addPage(Tiled.viewOf(Employee.class));
 app.addPage(Tabular.viewOf(Client.class));
 app.run();
 ```
-Now we have two pages. The second page displays a table of clients. This is because we used a different type of view.
+Now we have two pages. The second page displays a table of clients. This is because we used a different type of view. Notice that with the tabular view 
+you can order entities, filter them using a simple query language (e.g. "age=32 AND salary>60000").
 
 ## Concepts
 
