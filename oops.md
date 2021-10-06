@@ -33,6 +33,12 @@ A page can have one or more views.
 
 Views display one or more instances of an entity.
 
+Entities have fields, functions, operations. Fields can be primitive types or nested components. Functions are read-only
+methods that return a value. Operations on the other hand have some side effects. Operations can have parameters. These 
+parameters can be primitive types, complex types or enities.
+
+You can also define relationships. Entities do not need to be aware of relationships they are involved in.
+
 
 ## Infrastructure
 
