@@ -2,13 +2,38 @@
 
 Object Oriented Programming reborn
 
-Just create your domain objects and publish them.
+## Quickstart
+
+Just create your domain objects and publish them:
 
 ```java
-OOPS.publishEntity(Employee.class);
+Application app = new Application();
+app.addPage(Tiled.viewOf(Employee.class));
+app.run();
 ```
+Open http://localhost:8080 and you should see a web page that allows you to add, modify and delete employees. The employees are displayed as tiles.
+This code is enough to generate the UI, the REST API, the database schema and all the CRUD operations.
+Let's add another entity:
 
-OOPS will create a REST endpoint for your entities with:
+```java
+Application app = new Application("My Company");
+app.addPage(Tiled.viewOf(Employee.class));
+app.addPage(Tabular.viewOf(Client.class));
+app.run();
+```
+Now we have two pages. The second page displays a table of clients. This is because we used a different type of view.
+
+## Concepts
+
+The application is the unit of deployment. The application comes with built in authentication, navigation menu, observability tools etc.
+The application is composed of several pages.
+A page can have one or more views.
+Views display one or more instances of an entity.
+
+
+## Infrastructure
+
+Not only has the UI been generated. A REST endpoint will be available for your entities with
 
 all the usual operations
 ```
